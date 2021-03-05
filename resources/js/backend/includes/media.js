@@ -1,30 +1,32 @@
 $(document).ready(function() {
-    var table = $('#mediaTable').DataTable( {
+    let table = $('#mediaTable').DataTable( {
+        responsive: true,
         rowReorder: {
             selector: 'td:first-child'
         },
         columnDefs: [
-            { targets: 1, visible: false }
+            { targets: 1, visible: false },
+            { responsivePriority: 0, targets: -1 }
         ]
     } );
 
     $('.media-delete-button').on('click',function(){
-        var route = $(this).data('action');
-        var csrf_token = $('#csrfValue').val();
-        var button = $(this);
-        var id = $(this).data('id');
+        let route = $(this).data('action');
+        let csrf_token = $('#csrfValue').val();
+        let button = $(this);
+        let id = $(this).data('id');
 
         function deleteRow(){
             table.row(button.parents('tr') ).remove().draw()
         }
 
-        success = $.fn.ajaxCall(id, route, csrf_token, 'DELETE',deleteRow);
+        $.fn.ajaxCall(id, route, csrf_token, 'DELETE',deleteRow);
     })
 
-    table.on('row-reordered', function (e, diff, edit) {
+    table.on('row-reordered', function () {
         table.one('draw', function () {
-            var json = '[';
-            var length = table.rows().data().length;
+            let json = '[';
+            let length = table.rows().data().length;
 
             table.rows().data().each(function (element, index) {
                 json += element[1];
@@ -34,8 +36,8 @@ $(document).ready(function() {
             });
             json += ']';
 
-            var route = $('#orderRoute').val();
-            var csrf_token = $('#csrfValue').val();
+            let route = $('#orderRoute').val();
+            let csrf_token = $('#csrfValue').val();
             $.fn.ajaxCall(json, route, csrf_token, 'PATCH');
         });
 
