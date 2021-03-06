@@ -17,16 +17,7 @@
             <td>{{$loop->index+1}}</td>
             <td>{{$blog->id}}</td>
             <td>
-                <label class="c-switch c-switch-success">
-                    {!! Form::checkbox('is_active', true, $blog->is_active, [
-                        'data-id'=>$blog->id,
-                        'class' => 'status-input c-switch-input',
-                        'data-toggle'=>'toggle',
-                        'data-onstyle' => 'success',
-                        'data-route' => route('admin.blogs.activate', $blog)
-                        ]) !!}
-                    <span class="c-switch-slider"></span>
-                </label>
+                @include('backend.includes.switch', ['model' => $blog, 'input_name' => 'is_active', 'default' => $blog->is_active, 'route' => route('admin.blogs.activate', $blog)])
             </td>
             <td>{{$blog->title}}</td>
             <td>{{$blog->started_at}} - {{$blog->finished_at}}</td>

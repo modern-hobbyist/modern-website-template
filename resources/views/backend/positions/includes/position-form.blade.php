@@ -7,20 +7,7 @@
 
     <div class="row mb-2">
         <div class="col col-12 col-sm-2">
-            <div class="form-group">
-                {!! Form::label('is_active', 'Active'); !!}
-                <div class="form-control-label">
-                    <label class="c-switch c-switch-success c-switch-lg">
-                        {!! Form::checkbox('is_active', true, $position->is_active, [
-                            'data-id'=>$position->id,
-                            'class' => 'status-input c-switch-input mt-2',
-                            'data-toggle'=>'toggle',
-                            'data-onstyle' => 'success',
-                            ]) !!}
-                        <span class="c-switch-slider"></span>
-                    </label>
-                </div>
-            </div>
+            @include('backend.includes.switch-label', ['model'=> $position, 'default' => $position->is_active, 'input_name' => 'is_active', 'label_name' => 'Active'])
         </div>
         <div class="col col-sm-10">
             <div class="form-group">
