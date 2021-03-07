@@ -14,13 +14,13 @@
     <tbody>
     @foreach($blogs as $blog)
         <tr>
-            <td>{{$loop->index+1}}</td>
+            <td class="selectable">{{$loop->index+1}}</td>
             <td>{{$blog->id}}</td>
             <td>
                 @include('backend.includes.switch', ['model' => $blog, 'input_name' => 'is_active', 'default' => $blog->is_active, 'route' => route('admin.blogs.activate', $blog)])
             </td>
-            <td>{{$blog->title}}</td>
-            <td>{{$blog->started_at}} - {{$blog->finished_at}}</td>
+            <td class="selectable">{{$blog->title}}</td>
+            <td class="selectable">{{$blog->started_at}} - {{$blog->finished_at}}</td>
             <td>
                 @include('backend.blogs.includes.actions', $model = $blog)
             </td>
