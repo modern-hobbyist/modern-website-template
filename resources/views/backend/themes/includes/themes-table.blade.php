@@ -41,5 +41,4 @@
 @push('after-scripts')
     <script src="{{ mix('js/backend/themes/themes.js') }}"></script>
     <script src="{{ mix('js/backend/includes/reorder.js') }}"></script>
-
 @endpush
