@@ -24,7 +24,7 @@
                         @include('includes.partials.lang')
                     </li>
                 @endif
-
+                    @if($active_theme->projects_active)
                     <li class="nav-item">
                         <x-utils.link
                             :href="route('frontend.projects')"
@@ -32,6 +32,8 @@
                             :text="__('Projects')"
                             class="nav-link" />
                     </li>
+                    @endif
+                    @if($active_theme->blogs_active)
                     <li class="nav-item">
                         <x-utils.link
                             :href="route('frontend.blogs')"
@@ -39,6 +41,8 @@
                             :text="__('Blogs')"
                             class="nav-link" />
                     </li>
+                    @endif
+                    @if($active_theme->about_active)
                     <li class="nav-item">
                         <x-utils.link
                             :href="route('frontend.about')"
@@ -46,6 +50,8 @@
                             :text="__('About')"
                             class="nav-link" />
                     </li>
+                    @endif
+                    @if($active_theme->positions_active)
                     <li class="nav-item">
                         <x-utils.link
                             :href="route('frontend.career')"
@@ -53,13 +59,25 @@
                             :text="__('Career')"
                             class="nav-link" />
                     </li>
-                    <li class="nav-item">
-                        <x-utils.link
-                            :href="route('frontend.contact')"
-                            :active="activeClass(Active::checkRoute('frontend.contact'))"
-                            :text="__('Contact')"
-                            class="nav-link" />
-                    </li>
+                    @endif
+                    @if($active_theme->contact_active)
+                        <li class="nav-item">
+                            <x-utils.link
+                                :href="route('frontend.contact')"
+                                :active="activeClass(Active::checkRoute('frontend.contact'))"
+                                :text="__('Contact')"
+                                class="nav-link" />
+                        </li>
+                    @endif
+                    @if($active_theme->links_active)
+                        <li class="nav-item">
+                            <x-utils.link
+                                :href="route('frontend.links')"
+                                :active="activeClass(Active::checkRoute('frontend.links'))"
+                                :text="__('Links')"
+                                class="nav-link" />
+                        </li>
+                    @endif
 
 {{--                @guest--}}
 {{--                    <li class="nav-item">--}}
