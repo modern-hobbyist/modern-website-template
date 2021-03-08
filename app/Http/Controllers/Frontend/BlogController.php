@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Services\BlogService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Carbon;
 use Illuminate\View\View;
 
 class BlogController extends Controller
@@ -34,7 +35,12 @@ class BlogController extends Controller
     public function index()
     {
         //List all the blogs
-        $blogs = Blog::orderBy('order', 'asc')->get();
+        $blogs = Blog::where('started_at', '<=', date('Y-m-d H:i'))
+            ->where('finished_at', '>=', date('Y-m-d H:i'))
+            ->orWhereNull('started_at')
+            ->orWhereNull('finished_at')
+            ->where('is_active', true)
+            ->orderBy('order', 'asc')->get();
 
         return view('frontend.blogs.index')->withBlogs($blogs);
     }

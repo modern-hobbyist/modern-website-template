@@ -9,10 +9,13 @@
     {!! Form::token(); !!}
 
     <div class="row mb-2">
-        <div class="col col-12 col-sm-2">
+        <div class="col col-6 col-sm-2">
             @include('backend.includes.switch-label', ['model'=> $blog, 'default' => $blog->is_active, 'input_name' => 'is_active', 'label_name' => 'Active'])
         </div>
-        <div class="col col-12 col-sm-10">
+        <div class="col col-6 col-sm-2">
+            @include('backend.includes.switch-label', ['model'=> $blog, 'default' => $blog->comments_active, 'input_name' => 'comments_active', 'label_name' => 'Comments'])
+        </div>
+        <div class="col col-12 col-sm-8">
             <div class="form-group">
                 {!! Form::label('title', 'Title'); !!}
                 {!! Form::text('title',null, ['class' => 'form-control', 'placeholder' => 'blog Title']); !!}

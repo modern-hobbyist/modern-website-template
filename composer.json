@@ -11,6 +11,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
+        "actuallymab/laravel-comment": "^1.0",
         "arcanedev/log-viewer": "8.x",
         "bensquire/php-color-extractor": "dev-master",
         "darkghosthunter/laraguard": "dev-master",
