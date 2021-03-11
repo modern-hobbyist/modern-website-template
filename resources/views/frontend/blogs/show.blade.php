@@ -15,7 +15,9 @@
     @foreach(explode(',',$blog->tags) as $tag)
         <a href="{{route('frontend.blogs.related', trim($tag, ' '))}}">{{trim($tag, ' ')}}</a>
     @endforeach
-    @comments(['model' => $blog])
+    @if($blog->comments_active)
+        @comments(['model' => $blog])
+    @endif
 @endsection
 
 @push('after-scripts')

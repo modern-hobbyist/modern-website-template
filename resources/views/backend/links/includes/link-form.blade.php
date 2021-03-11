@@ -6,25 +6,32 @@
     {!! Form::token(); !!}
 
     <div class="row mb-2">
+        <div class="col col-4 m-auto text-center " >
+            <div class="form-group">
+                {!! Form::label('image',"Link Image"); !!}
+                {!! Form::file('image', ['hidden' => 'hidden', 'id' => 'imageInput']); !!}
+                <div class="square img-thumbnail" role="button" data-trigger="#imageInput">
+                    <div class="thumbnail-overlay img-thumbnail">
+                        <div class="row h-100 m-auto">
+                            <div class="col m-auto">
+                                <i class="thumbnail-icon fas fa-edit fa-2x m-auto text-light"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thumbnail img-thumbnail" style="background: url('{{$image != null ? $image->getUrl() : asset(getPlaceholder())}}') center center; background-size: cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
         <div class="col col-12 col-sm-2">
             @include('backend.includes.switch-label', ['model'=> $link, 'default' => $link->is_active, 'input_name' => 'is_active', 'label_name' => 'Active'])
         </div>
-        <div class="col col-12 col-sm-5">
+        <div class="col col-12 col-sm-10">
             <div class="form-group">
                 {!! Form::label('title', 'Title'); !!}
                 {!! Form::text('title',null, ['class' => 'form-control', 'placeholder' => 'Link Title']); !!}
-            </div>
-        </div>
-        <div class="col col-12 col-sm-5">
-{{--            @if(isset($image))--}}
-{{--                <img src="{{$image->getUrl()}}" class="img-thumbnail">--}}
-{{--            @endif--}}
-            <div class="form-group">
-                {!! Form::label('image',"Upload Thumbnail"); !!}
-                <div class="custom-file">
-                    {!! Form::label('image',"Upload Thumbnail", ['class' => 'custom-file-label']); !!}
-                    {!! Form::file('image', ['class' => 'custom-file-input', 'multiple' => false]); !!}
-                </div>
             </div>
         </div>
     </div>
