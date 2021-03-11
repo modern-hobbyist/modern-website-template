@@ -15,6 +15,7 @@
     @foreach(explode(',',$blog->tags) as $tag)
         <a href="{{route('frontend.blogs.related', trim($tag, ' '))}}">{{trim($tag, ' ')}}</a>
     @endforeach
+    @comments(['model' => $blog])
 @endsection
 
 @push('after-scripts')

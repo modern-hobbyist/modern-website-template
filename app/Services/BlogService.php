@@ -47,6 +47,7 @@ class BlogService extends BaseService
                 'page_content' => $data['page_content'],
                 'external_url' => $data['external_url'],
                 'is_active' => isset($data['is_active']),
+                'comments_active' => isset($data['comments_active']),
                 'started_at' => $data['started_at'],
                 'finished_at' => $data['finished_at'],
             ]);
@@ -85,6 +86,7 @@ class BlogService extends BaseService
                 'page_content' => $data['page_content'],
                 'external_url' => $data['external_url'],
                 'is_active' => isset($data['is_active']),
+                'comments_active' => isset($data['comments_active']),
                 'started_at' => $data['started_at'],
                 'finished_at' => $data['finished_at'],
             ]);

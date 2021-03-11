@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravelista\Comments\Commentable;
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -14,7 +15,8 @@ class Blog extends Model implements HasMedia
 {
     use HasFactory,
         InteractsWithMedia,
-        SoftDeletes;
+        SoftDeletes,
+        Commentable;
 
     protected $casts = [
         'is_active' => 'boolean',
@@ -29,6 +31,7 @@ class Blog extends Model implements HasMedia
         'page_content',
         'external_url',
         'is_active',
+        'comments_active',
         'order',
         'started_at',
         'finished_at',

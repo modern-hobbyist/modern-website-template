@@ -38,6 +38,7 @@ class UpdateBlogRequest extends FormRequest
             'page_content' => 'nullable|string',
             'external_url' => 'nullable|url',
             'is_active' => 'sometimes|boolean',
+            'comments_active' => 'sometimes|boolean',
             'started_at' => 'nullable|date',
             'finished_at' => 'nullable|date|after_or_equal:started_at',
             'media.*' => 'nullable|mimes:pdf,jpeg,jpg,png,mp4',
