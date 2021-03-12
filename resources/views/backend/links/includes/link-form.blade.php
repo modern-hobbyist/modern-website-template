@@ -18,7 +18,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="thumbnail img-thumbnail" style="background: url('{{$image != null ? $image->getUrl() : asset(getPlaceholder())}}') center center; background-size: cover">
+                    <div class="thumbnail img-thumbnail" style="background: url('{{isset($image) ? $image->getUrl() : asset(getPlaceholder())}}') center center; background-size: cover">
                     </div>
                 </div>
             </div>
