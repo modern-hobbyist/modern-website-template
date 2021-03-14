@@ -1,5 +1,6 @@
 @push('before-styles')
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 @endpush
 
 {!! Form::model($position, ['route' => [$route, $position], 'method' => $method, 'files' => true]) !!}
@@ -72,11 +73,11 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-2">
         <div class="col">
             <div class="form-group">
                 {!! Form::label('page_content', 'Page Content'); !!}
-                {!! Form::textarea('page_content',null, ['class' => 'form-control', 'placeholder' => 'Page Content', 'rows' => 10]); !!}
+                {!! Form::textarea('page_content',null, ['class' => 'form-control', 'id' => 'page_content', 'placeholder' => 'Page Content', 'rows' => 10]); !!}
             </div>
         </div>
     </div>

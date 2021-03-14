@@ -23,5 +23,4 @@
 @endsection
 
 @push('after-scripts')
-    <script src="{{mix('js/backend/includes/forms.js')}}"></script>
 @endpush
