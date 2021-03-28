@@ -103,7 +103,7 @@ displayed in the way that you see fit.
     cd ~/Homestead
     vagrant ssh
     cd code/<project repo>/
-    php artisan link:storage
+    php artisan storage:link
     ```
 * Go for a spin!
   * You should now be able to visit `homestead.<your app>` in a browser.
