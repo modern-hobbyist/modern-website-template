@@ -1,5 +1,5 @@
 import "jquery";
-import "bootstrap";
+// import "bootstrap";
 import "popper.js";
 import "bs4-summernote";
 $(document).ready(function(){

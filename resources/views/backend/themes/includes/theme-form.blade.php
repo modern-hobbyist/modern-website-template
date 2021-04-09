@@ -53,8 +53,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="row mb-2">
         <div class="col col-12 col-sm-2">
             @include('backend.includes.switch-label', ['model'=> $theme, 'default' => $theme->is_active, 'input_name' => 'is_active', 'label_name' => 'Active'])
