@@ -10,6 +10,7 @@ $(document).ready(function(){
                 $('body > .note-popover').hide();
             }
         },
+        tooltip: false
     });
 
     $('.square').on('click', function(){
