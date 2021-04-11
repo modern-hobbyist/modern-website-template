@@ -31,6 +31,9 @@
                             @include('backend.includes.switch-label', ['model'=> $theme, 'default' => $theme->background_video_active, 'input_name' => 'background_video_active', 'label_name' => 'Background Video'])
                         </div>
                         <div class="col col-6 col-sm-3">
+                            @include('backend.includes.switch-label', ['model'=> $theme, 'default' => $theme->background_image_active, 'input_name' => 'background_image_active', 'label_name' => 'Background Image'])
+                        </div>
+                        <div class="col col-6 col-sm-3">
                             @include('backend.includes.switch-label', ['model'=> $theme, 'default' => $theme->contact_active, 'input_name' => 'contact_active', 'label_name' => 'Contact Page'])
                         </div>
                         <div class="col col-6 col-sm-3">

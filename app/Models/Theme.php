@@ -21,6 +21,7 @@ class Theme extends Model implements HasMedia
         'is_maintenance_mode' => 'boolean',
         'contact_active' => 'boolean',
         'resume_active' => 'boolean',
+        'background_image_active' => 'boolean',
         'background_video_active' => 'boolean',
     ];
 
@@ -49,6 +50,7 @@ class Theme extends Model implements HasMedia
         'projects_active',
         'positions_active',
         'links_active',
+        'background_image_active',
         'background_video_active',
         'primary_color',
         'secondary_color',

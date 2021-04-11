@@ -60,6 +60,7 @@ class UpdateThemeRequest extends FormRequest
             'projects_active' => 'sometimes|boolean',
             'positions_active' => 'sometimes|boolean',
             'links_active' => 'sometimes|boolean',
+            'background_image_active' => 'sometimes|boolean',
             'background_video_active' => 'sometimes|boolean',
             'primary_color' => 'nullable|string',
             'secondary_color' => 'nullable|string',
